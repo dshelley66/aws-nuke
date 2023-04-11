@@ -30,7 +30,7 @@ func ListAppRunners(sess *session.Session) ([]Resource, error) {
 	for {
 		resp, err := svc.ListServices(params)
 		if err != nil {
-			// The ErrUknownEndpoint occurs when the region doesn't support AppRunner so we will
+			// The ErrUnknownEndpoint occurs when the region doesn't support AppRunner so we will
 			// skip those regions
 			if _, ok := err.(awsutil.ErrUnknownEndpoint); ok {
 				return resources, nil
